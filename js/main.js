@@ -377,7 +377,7 @@ const travelPhotos = {
   'hawaii-2025': ['IMG_2814.jpeg','IMG_2909.jpeg','IMG_3001.jpeg','IMG_3293.jpeg','IMG_3309.jpeg','IMG_3439.jpeg','IMG_3450.jpeg','IMG_5601.jpeg'],
   'iceland-boston-2026': ['IMG_0403.jpeg','IMG_0404.jpeg','IMG_0430.jpeg','IMG_0650.jpeg','IMG_0885.jpeg','IMG_0893.jpeg','IMG_0939.jpeg','IMG_1205.jpeg','IMG_1320.jpeg','IMG_1324.jpeg','IMG_9724.jpeg','IMG_9807.jpeg'],
   'japan-kitakyushu-2025': ['IMG_0267.jpeg','IMG_0368.jpeg','IMG_1988.jpeg','IMG_5601.jpeg'],
-  'kazakhstan-almaty-2025': ['IMG_0267.jpeg','IMG_0368.jpeg','IMG_1988.jpeg','IMG_5601.jpeg','IMG_8439.jpeg','IMG_8829.jpeg','IMG_8995.jpeg','IMG_9189.jpeg','IMG_9394.jpeg','IMG_9397.jpeg','IMG_9542.JPG'],
+  'kazakhstan-almaty-2025': ['IMG_8439.jpeg','IMG_8829.jpeg','IMG_8995.jpeg','IMG_9189.jpeg','IMG_9394.jpeg','IMG_9397.jpeg','IMG_9542.JPG'],
   'philippines-bohol-2025': ['IMG_6009.jpeg','IMG_6010.jpeg','IMG_6523.jpeg','IMG_6603.jpeg','IMG_6698.jpeg','IMG_6933.jpeg'],
   'south-america-2026': ['IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
   'turkey-2022': ['IMG_1579.jpeg','IMG_1605.jpeg','IMG_1612.jpeg','IMG_1620.jpeg','IMG_1957.jpeg','IMG_1962.jpeg','IMG_1975.jpeg','IMG_2149.jpeg','IMG_2300.jpeg','IMG_2629.jpeg','IMG_6594.JPG','IMG_9421.jpeg','IMG_9503.jpeg'],
