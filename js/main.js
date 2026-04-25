@@ -274,20 +274,37 @@ const travels = [
   },
   {
     id: "iceland-boston-2026",
-    title: "Iceland & Boston",
-    countries: ["Iceland", "USA"],
+    title: "Iceland",
+    countries: ["Iceland"],
     flag: "🇮🇸",
     continent: "Europe",
     date: "April 2026",
     year: 2026,
-    days: 10,
+    days: 6,
     coverGradient: "linear-gradient(135deg, #001a00 0%, #003300 50%, #004d00 100%)",
-    excerpt: "April in Iceland: still cold enough for snow, long enough days to drive the Ring Road without headlights. The landscape is geology happening in real time. Then Boston, compact and walkable and completely different.",
-    tags: ["Nature", "Adventure", "Cities"],
-    highlights: ["Golden Circle", "Ring Road", "Jökulsárlón Glacier Lagoon", "Boston Freedom Trail"],
+    excerpt: "April in Iceland: still cold enough for snow, long enough days to drive the Ring Road without headlights. The landscape is geology happening in real time — volcanoes, glaciers, waterfalls, all at once.",
+    tags: ["Nature", "Adventure", "Solo"],
+    highlights: ["Golden Circle", "Ring Road", "Jökulsárlón Glacier Lagoon", "Reynisfjara Black Beach", "Diamond Beach"],
     bestTime: "June – Aug (midnight sun), Nov – Feb (northern lights)",
-    currency: "ISK kr / USD $",
-    story: `April is shoulder season in Iceland — the tourist peak of summer hasn't arrived, the roads are mostly clear, and the days are already long enough to drive without headlamps by mid-month. The light is extraordinary: low-angled, Nordic, gold at hours when other countries have moved to white overhead sun.\n\nI drove the Ring Road — Iceland's Route 1, which circles the entire island — over five days. The landscape changes completely every fifty kilometers. Black volcanic beaches (Reynisfjara, where the Atlantic crashes against basalt columns that look assembled by someone with too much time and a geometry obsession). Geothermal fields where the earth steams and smells of sulfur and nothing grows except moss in colors that shouldn't exist. Waterfalls. Glaciers. More waterfalls.\n\nJökulsárlón glacier lagoon at sunrise: icebergs calved from the Vatnajökull glacier float in blue-black water toward the sea. Each one is a different shade of ice-blue, backlit by the low April sun. The Diamond Beach next to it, where ice chunks have washed up on black sand and catch the light like — well, like diamonds.\n\nBoston was added as a layover that became three days. Freedom Trail, clam chowder, MIT and Harvard across the river. A good American appendix to an Icelandic main.`
+    currency: "ISK kr",
+    story: `April is shoulder season in Iceland — the tourist peak of summer hasn't arrived, the roads are mostly clear, and the days are already long enough to drive without headlamps by mid-month. The light is extraordinary: low-angled, Nordic, gold at hours when other countries have moved to white overhead sun.\n\nI drove the Ring Road — Iceland's Route 1, which circles the entire island — over five days. The landscape changes completely every fifty kilometers. Black volcanic beaches (Reynisfjara, where the Atlantic crashes against basalt columns that look assembled by someone with too much time and a geometry obsession). Geothermal fields where the earth steams and smells of sulfur and nothing grows except moss in colors that shouldn't exist. Waterfalls. Glaciers. More waterfalls.\n\nJökulsárlón glacier lagoon at sunrise: icebergs calved from the Vatnajökull glacier float in blue-black water toward the sea. Each one is a different shade of ice-blue, backlit by the low April sun. The Diamond Beach next to it, where ice chunks have washed up on black sand and catch the light like — well, like diamonds.\n\nIceland does something to your sense of scale. The country is the size of South Korea but feels infinite. Every turn on the Ring Road opens onto something that looks like it was painted for dramatic effect. After six days I still hadn't processed it fully. I don't think you're supposed to.`
+  },
+  {
+    id: "boston-2026",
+    title: "Boston, USA",
+    countries: ["USA"],
+    flag: "🇺🇸",
+    continent: "North America",
+    date: "April 2026",
+    year: 2026,
+    days: 4,
+    coverGradient: "linear-gradient(135deg, #0a0014 0%, #1a0030 50%, #8b0000 100%)",
+    excerpt: "Three nights in America's most walkable city. The Freedom Trail, Harvard Yard in spring, clam chowder in the North End, and the specific energy of a city that's been taking itself seriously since 1630.",
+    tags: ["Cities", "History", "Culture"],
+    highlights: ["Freedom Trail", "Harvard & MIT", "Fenway Park", "North End (Little Italy)", "Boston Common"],
+    bestTime: "April – June, September – November",
+    currency: "USD $",
+    story: `Boston is one of America's oldest cities and wears its age confidently — which is unusual for a country that tends to demolish things rather than preserve them. Three nights was enough to walk most of what matters, and in Boston almost everything is walkable, which is also unusual for America.\n\nThe Freedom Trail is a red-brick line painted into the sidewalk, connecting sixteen historic sites from the revolutionary era across 4 kilometers of the city. Paul Revere's house still standing in the North End, exactly as it was in 1680. The Old State House where the Declaration of Independence was first read to Bostonians in 1776, now surrounded on all sides by skyscrapers that seem embarrassed to be there. The trail sounds like a tourist gimmick but isn't — Boston's history is dense enough that each stop actually earns its place.\n\nHarvard and MIT sit across the Charles River in Cambridge, a 20-minute walk or one subway stop. Harvard Yard in April was exactly what you'd imagine: undergraduates with heavy bags, old brick buildings, and the particular seriousness of a place that has been taking itself seriously since 1636. MIT's campus is completely different — angular, modernist, the buildings named after their donors or numbered like equations.\n\nThe North End is Boston's Italian-American neighborhood, and it has maintained its identity with unusual stubbornness. The clam chowder was not overrated. The cannoli at Mike's Pastry, which has been there since 1946, was not overrated. Boston in April, with the Red Sox season just started and the city cautiously optimistic, felt like catching a place at exactly the right moment.`
   }
 ];
 
