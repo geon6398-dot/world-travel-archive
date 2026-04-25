@@ -137,21 +137,38 @@ const travels = [
     story: `Australia is so far from everywhere else that getting there feels like an achievement in itself. The eleven-hour flight from Seoul deposits you at the opposite corner of the world, where the seasons are reversed, the animals are alien, and driving on the left feels slightly surreal.\n\nSydney Harbour at dawn: I'd seen the photographs. The photographs are inadequate. The Opera House and Harbour Bridge together, the light coming off the water at a low angle, the ferries running — it's the rare travel experience where reality exceeds expectation.\n\nAugust is austral winter, which in Sydney means clear skies and 18 degrees. The beaches were quieter than usual, which made Bondi feel like a local secret rather than a tourist site. The Blue Mountains were covered in eucalyptus haze — a genuine phenomenon where the oil in the leaves creates a blue atmospheric effect. The Three Sisters rock formation in morning light was worth the two-hour drive.\n\nAustralia's scale defeats you. I could have spent a month and not gotten close to seeing it properly. But fourteen days was enough to understand why Australians talk about their country the way they do.`
   },
   {
+    id: "qatar-2024",
+    title: "Qatar",
+    countries: ["Qatar"],
+    flag: "🇶🇦",
+    continent: "Asia",
+    date: "December 2024",
+    year: 2024,
+    days: 2,
+    coverGradient: "linear-gradient(135deg, #1a0010 0%, #4d0030 50%, #8b1a1a 100%)",
+    excerpt: "Two days in Doha on the way to Europe — enough to discover that Qatar is not just an airport. The Museum of Islamic Art, the Souq Waqif at night, and a skyline that makes no attempt at modesty.",
+    tags: ["Cities", "Culture", "Architecture"],
+    highlights: ["Museum of Islamic Art", "Souq Waqif", "The Pearl-Qatar", "Doha Skyline", "Corniche"],
+    bestTime: "November – March",
+    currency: "QAR ر.ق",
+    story: `Qatar was supposed to be a transit. The layover was long enough to leave the airport, and once you've left the airport, two days seems like the right commitment.\n\nDoha's skyline from the Corniche is one of the more striking city views I've seen — the cluster of futuristic towers reflected in the Arabian Gulf, the city built entirely within living memory on what was a pearl-diving village. The Museum of Islamic Art sits on an artificial peninsula jutting into the water, designed by I.M. Pei at age 91. It contains one of the finest collections of Islamic art in the world and the building itself is worth the visit regardless of what's inside.\n\nSouq Waqif at night is the other pole: a reconstructed traditional market that somehow feels genuinely old, the narrow lanes full of spice stalls, shisha cafes, and restaurants where you can eat machboos — the Qatari national dish of spiced rice and meat — while watching the evening foot traffic. The contrast with the glass towers five minutes' walk away is complete and deliberate.\n\nTwo days is not enough for Qatar. It was enough to understand that two days is not enough for Qatar.`
+  },
+  {
     id: "europe-grand-tour-2025",
     title: "Europe Grand Tour",
-    countries: ["Qatar", "Hungary", "Austria", "Czechia", "Germany", "Netherlands", "Belgium", "Luxembourg", "France"],
+    countries: ["Hungary", "Austria", "Czechia", "Germany", "Netherlands", "Belgium", "Luxembourg", "France"],
     flag: "🇭🇺",
     continent: "Europe",
     date: "Dec 2024 – Jan 2025",
     year: 2025,
-    days: 45,
+    days: 43,
     coverGradient: "linear-gradient(135deg, #0d0d1a 0%, #1a1a2d 50%, #2d2d4d 100%)",
-    excerpt: "Nine countries in forty-five days over the winter holidays. Christmas markets, medieval cities under snow, the Rhine valley, Paris in January rain. Central Europe in winter is its own genre.",
+    excerpt: "Eight countries in forty-three days over the winter holidays. Christmas markets, medieval cities under snow, the Rhine valley, Paris in January rain. Central Europe in winter is its own genre.",
     tags: ["Multi-Country", "Culture", "Cities", "Winter Travel"],
     highlights: ["Budapest Thermal Baths", "Vienna Opera House", "Prague Old Town", "Amsterdam Canals", "Paris in January"],
     bestTime: "Varies by country",
-    currency: "EUR € / GBP £",
-    story: `The plan started modestly — visit Hungary and Austria over the winter break. It grew, as plans do, until it covered nine countries and six weeks, transiting through Qatar both ways.\n\nDoha's airport is a layover that earns its reputation. Then Budapest, which is arguably the most beautiful city in Central Europe: the Parliament building lit at night along the Danube, the thermal baths operating since the Ottoman era, the ruin bars in the Jewish Quarter where parties happen in buildings the city decided to leave beautifully decayed rather than renovate.\n\nVienna for classical music and Schnitzel. Prague for the astronomical clock and the sense of walking through a perfectly preserved medieval city that somehow survived the twentieth century intact. Germany through the Rhine valley, Christmas markets still running in the first days of January, mulled wine in paper cups. Amsterdam's canals frozen at the edges. Belgium for the chocolates and the architecture.\n\nLuxembourg — a small country that surprises you with how much it contains. Then Paris again, January this time: grey skies and the museums half-empty. I prefer Paris in low season. Fewer people, more city.`
+    currency: "EUR €",
+    story: `The plan started modestly — visit Hungary and Austria over the winter break. It grew, as plans do, until it covered eight countries and six weeks.\n\nBudapest first, which is arguably the most beautiful city in Central Europe: the Parliament building lit at night along the Danube, the thermal baths operating since the Ottoman era, the ruin bars in the Jewish Quarter where parties happen in buildings the city decided to leave beautifully decayed rather than renovate.\n\nVienna for classical music and Schnitzel. Prague for the astronomical clock and the sense of walking through a perfectly preserved medieval city that somehow survived the twentieth century intact. Germany through the Rhine valley, Christmas markets still running in the first days of January, mulled wine in paper cups. Amsterdam's canals frozen at the edges. Belgium for the chocolates and the architecture.\n\nLuxembourg — a small country that surprises you with how much it contains. Then Paris again, January this time: grey skies and the museums half-empty. I prefer Paris in low season. Fewer people, more city.`
   },
   {
     id: "china-qingdao-2025",
