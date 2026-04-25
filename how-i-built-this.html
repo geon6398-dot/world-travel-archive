@@ -192,10 +192,11 @@
     <p>All travel data lives in a single JavaScript array in <code style="color:var(--accent); font-size:0.85em;">main.js</code>. Adding a new trip means adding one object to that array — no database, no CMS, no backend.</p>
 
     <div class="stat-chips">
-      <span class="stat-chip">17 trips documented</span>
+      <span class="stat-chip">19 trips documented</span>
       <span class="stat-chip">26 countries & territories</span>
       <span class="stat-chip">5 continents</span>
-      <span class="stat-chip">~280 days abroad</span>
+      <span class="stat-chip">~282 days abroad</span>
+      <span class="stat-chip">191 photos uploaded</span>
       <span class="stat-chip">0 lines of code written by hand</span>
     </div>
   </div>
@@ -250,9 +251,46 @@
   </div>
 
   <div class="process-card">
-    <p class="process-step">Step 07 · Coming Next</p>
-    <h3>GitHub Pages Deployment</h3>
-    <p>The final step is deploying the site to GitHub Pages. Claude will provide the exact terminal commands: initializing a git repository, creating a remote repository on GitHub, pushing all files, and enabling Pages in repository settings. The site will be publicly accessible at <code style="color:var(--accent); font-size:0.85em;">https://[username].github.io/world-travel-archive/</code>.</p>
+    <p class="process-step">Step 07 · Deployment</p>
+    <h3>Going Live on GitHub Pages</h3>
+    <p>Claude installed the GitHub CLI (<code style="color:var(--accent); font-size:0.85em;">gh</code>) via Homebrew, initiated a browser-based OAuth login flow, and provided a one-time code to authorize. After login, Claude initialized git, created a public repository (<code style="color:var(--accent); font-size:0.85em;">geon6398-dot/world-travel-archive</code>), pushed all files, and enabled GitHub Pages via the API.</p>
+    <p>The site went live at <code style="color:var(--accent); font-size:0.85em;">https://geon6398-dot.github.io/world-travel-archive/</code> within two minutes of pushing.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 08 · Design Polish</p>
+    <h3>Hero Background & Typography Tweaks</h3>
+    <p>After seeing the deployed site, I asked for a more adventurous hero background and larger description text. Claude replaced the plain radial gradient with a layered system: floating star-field dots, a shifting gold/blue shimmer animation, and a slow vertical drift — all pure CSS, no images or libraries. Excerpt font size was increased from <code style="color:var(--accent); font-size:0.85em;">0.875rem</code> to <code style="color:var(--accent); font-size:0.85em;">0.95rem</code> with wider line-height.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 09 · Real Photos (160 shots)</p>
+    <h3>Adding Actual Travel Photography</h3>
+    <p>I asked Claude to add real photos from my Mac Photos app. Claude created per-trip subfolders inside <code style="color:var(--accent); font-size:0.85em;">images/</code> and opened them in Finder so I could drag photos directly from the Photos app. After I added 160 photos across 12 trips, Claude updated <code style="color:var(--accent); font-size:0.85em;">main.js</code> with a <code style="color:var(--accent); font-size:0.85em;">travelPhotos</code> lookup object, rewrote <code style="color:var(--accent); font-size:0.85em;">createCard()</code> to show real photo thumbnails, updated the featured section to use photo backgrounds, and added a full gallery + lightbox to every detail page — click any photo for full-screen view, navigate with arrow keys, close with ESC.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 10 · Data Refinement</p>
+    <h3>Splitting Iceland & Boston into Two Entries</h3>
+    <p>The original "Iceland & Boston" entry was a combined trip. I asked Claude to separate them. Claude split the entry into Iceland (6 days, all the Ring Road / glacier content) and Boston, USA (3 nights / 4 days — Freedom Trail, Harvard, MIT, North End). Each now has its own detail page, story, and highlights list.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 11 · Data Refinement</p>
+    <h3>Extracting Qatar from the Europe Grand Tour</h3>
+    <p>Qatar was listed inside the Europe Grand Tour entry as a transit country. I asked Claude to give it its own entry: December 2024, 2 days in Doha. Claude created a standalone Qatar entry (Museum of Islamic Art, Souq Waqif, Doha skyline) and updated the Europe Grand Tour to 8 countries, 43 days.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 12 · Photos for New Entries</p>
+    <h3>Qatar & Boston Photography</h3>
+    <p>After creating the Qatar and Boston entries, I asked Claude to open both image folders in Finder. I dragged photos from my Photos app — 9 shots for Qatar, 22 for Boston. Claude detected the new files, added them to the <code style="color:var(--accent); font-size:0.85em;">travelPhotos</code> data, and pushed everything to GitHub.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 13 · This Update</p>
+    <h3>Keeping the Build Log Current</h3>
+    <p>I asked Claude to confirm the site is publicly visible (it is — anyone with the URL can view it) and to add all recent prompts to this page in English. Claude updated the process steps, conversation log, and project statistics to reflect the current state of the site.</p>
   </div>
 
   <hr class="divider" />
@@ -334,12 +372,162 @@
       <div class="message-content">
         <div class="message-role">Claude (claude-sonnet-4-6) · Response #3</div>
         <div class="message-bubble">
-          Updated 5 files:<br/><br/>
-          • <code style="color:var(--accent); font-size:0.85em;">css/style.css</code> — Added <code style="color:var(--accent); font-size:0.85em;">.controls-wrapper</code>, <code style="color:var(--accent); font-size:0.85em;">.sort-bar</code>, <code style="color:var(--accent); font-size:0.85em;">.sort-btn</code>, <code style="color:var(--accent); font-size:0.85em;">.trip-count</code>, and <code style="color:var(--accent); font-size:0.85em;">.filter-group-label</code> styles. Split filter bar into two rows (Region / Style).<br/>
-          • <code style="color:var(--accent); font-size:0.85em;">js/main.js</code> — Rewrote <code style="color:var(--accent); font-size:0.85em;">initFilter()</code> to handle simultaneous filtering + DOM-reordering sort. Added <code style="color:var(--accent); font-size:0.85em;">data-year</code> attribute to each card. Live trip counter updates on every filter/sort action.<br/>
-          • <code style="color:var(--accent); font-size:0.85em;">archive.html</code> — Two-row filter bar + sort controls + trip counter.<br/>
-          • <code style="color:var(--accent); font-size:0.85em;">index.html</code> — Same controls on the home page archive section.<br/>
-          • <code style="color:var(--accent); font-size:0.85em;">how-i-built-this.html</code> — Complete English rewrite with full conversation log, step-by-step build process, tech stack, and project statistics.
+          Updated 5 files — filter bar split into Region / Style rows, sort bar added (Newest / Oldest First), live trip counter, and this page fully rewritten in English with complete conversation log.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #4</div>
+        <div class="message-bubble">
+          The website looks great! But can you change the hero image to something more adventurous? And please make the font size of travel descriptions a bit larger.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #4</div>
+        <div class="message-bubble">
+          Replaced the hero background with a layered CSS animation system: floating star-field points, a gold/blue radial shimmer, and a slow vertical drift — all without images or JS. Increased excerpt font size from 0.875rem → 0.95rem with 1.6 line-height on both card and detail page descriptions.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #5</div>
+        <div class="message-bubble">
+          I've finished creating my GitHub account. Now please deploy this local website to GitHub. Create a new public repository called world-travel-archive, upload all files, and enable GitHub Pages. Do everything directly — I don't want to type any terminal commands myself.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #5</div>
+        <div class="message-bubble">
+          Installed GitHub CLI via Homebrew, initiated browser-based OAuth (one-time code: user approved in browser), initialized git, created public repository <code style="color:var(--accent); font-size:0.85em;">geon6398-dot/world-travel-archive</code>, pushed all 7 files, and enabled GitHub Pages via API. Site went live at <strong style="color:var(--accent);">https://geon6398-dot.github.io/world-travel-archive/</strong> within ~2 minutes.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #6</div>
+        <div class="message-bubble">
+          Can you add photos too? I have quite a lot from my recent trips. (Selected option a — from Mac Photos app)
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #6</div>
+        <div class="message-bubble">
+          Created 17 per-trip subfolders inside <code style="color:var(--accent); font-size:0.85em;">images/</code> and opened them in Finder. After user dragged 160 photos across 12 trips from the Photos app, Claude added a <code style="color:var(--accent); font-size:0.85em;">travelPhotos</code> lookup object to <code style="color:var(--accent); font-size:0.85em;">main.js</code>, rewrote <code style="color:var(--accent); font-size:0.85em;">createCard()</code> to use real photo thumbnails with hover zoom, updated featured section backgrounds, and added a full photo gallery + lightbox to every detail page (click → full-screen, ← → keys, ESC to close). Pushed 160 photos + code changes to GitHub.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #7</div>
+        <div class="message-bubble">
+          Regarding Iceland & Boston — remove Boston from there and create it as a separate entry: April, 3 nights / 4 days.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #7</div>
+        <div class="message-bubble">
+          Split the combined entry into two: <strong>Iceland</strong> (6 days — Ring Road, Jökulsárlón, Reynisfjara, Diamond Beach) and <strong>Boston, USA</strong> (4 days — Freedom Trail, Harvard & MIT, North End, Fenway). Each has its own story, highlights, and detail page. Pushed to GitHub.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #8</div>
+        <div class="message-bubble">
+          Remove Qatar from the Europe Grand Tour and make it a separate trip — December 2024, 2 days.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #8</div>
+        <div class="message-bubble">
+          Created a standalone <strong>Qatar</strong> entry (December 2024, 2 days — Museum of Islamic Art, Souq Waqif, Doha skyline, Corniche). Updated Europe Grand Tour to 8 countries, 43 days. Pushed to GitHub.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #9</div>
+        <div class="message-bubble">
+          Open the Qatar folder — I don't know where it is. Open the Boston folder too. I've added photos to both.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #9</div>
+        <div class="message-bubble">
+          Created <code style="color:var(--accent); font-size:0.85em;">images/qatar-2024/</code> and <code style="color:var(--accent); font-size:0.85em;">images/boston-2026/</code> and opened both in Finder. After user added photos, detected 9 Qatar shots and 22 Boston shots, added both to <code style="color:var(--accent); font-size:0.85em;">travelPhotos</code>, and pushed all 31 new photos to GitHub.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #10</div>
+        <div class="message-bubble">
+          This is a public website that anyone connected to GitHub can see, right? Please also add the recent prompts about adding photos to the "How I Built This" page in English.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #10</div>
+        <div class="message-bubble">
+          Yes — the site is fully public. Anyone with the URL can view it, no login required.<br/><br/>
+          Updated <code style="color:var(--accent); font-size:0.85em;">how-i-built-this.html</code>: added Steps 07–13 to the build process section, extended the conversation log with Prompts #4–10, and updated the project stats chips to reflect 19 trips and 191 photos.
         </div>
         <div class="timestamp">2026-04-25</div>
       </div>
