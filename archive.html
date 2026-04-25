@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive — World Travel Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">World Travel Archive</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="archive.html" class="active">Archive</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="how-i-built-this.html">How I Built This</a></li>
+  </ul>
+</nav>
+
+<section style="padding: 8rem 2rem 3rem;">
+  <div class="section-header">
+    <p class="section-label">Complete Archive</p>
+    <h2 class="section-title">All Destinations</h2>
+    <p class="section-desc">17 trips · 26 countries & territories · 5 continents. Filter by region or travel style, sort by year.</p>
+  </div>
+
+  <div class="controls-wrapper">
+    <!-- Filter row -->
+    <div class="filter-bar">
+      <span class="filter-group-label">Region:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Asia">Asia</button>
+      <button class="filter-btn" data-filter="Europe">Europe</button>
+      <button class="filter-btn" data-filter="North America">Americas</button>
+      <button class="filter-btn" data-filter="South America">S. America</button>
+      <button class="filter-btn" data-filter="Oceania">Oceania</button>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-group-label">Style:</span>
+      <button class="filter-btn" data-filter="Nature">Nature</button>
+      <button class="filter-btn" data-filter="Food">Food</button>
+      <button class="filter-btn" data-filter="Adventure">Adventure</button>
+      <button class="filter-btn" data-filter="Culture">Culture</button>
+      <button class="filter-btn" data-filter="Multi-Country">Multi-Country</button>
+      <button class="filter-btn" data-filter="Off the Beaten Path">Off the Beaten Path</button>
+      <button class="filter-btn" data-filter="Beaches">Beaches</button>
+    </div>
+
+    <!-- Sort row -->
+    <div class="sort-bar">
+      <span class="sort-label">Sort by year:</span>
+      <button class="sort-btn active" data-sort="newest">Newest First</button>
+      <button class="sort-btn" data-sort="oldest">Oldest First</button>
+      <span id="trip-count" class="trip-count">17 trips</span>
+    </div>
+  </div>
+
+  <div class="countries-grid" id="countries-grid" style="max-width:1200px; margin:0 auto;"></div>
+</section>
+
+<footer>
+  <div class="footer-logo">WTA</div>
+  <p>World Travel Archive · Built with Claude AI for CSIT 212</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

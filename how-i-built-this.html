@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I Built This — World Travel Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .how-section { padding: 8rem 2rem 5rem; }
+
+    .how-intro {
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+
+    .how-intro p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-top: 1rem;
+    }
+
+    .process-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 0 auto 1.5rem;
+      max-width: 720px;
+    }
+
+    .process-step {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .process-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 0.75rem;
+    }
+
+    .divider {
+      max-width: 720px;
+      margin: 3.5rem auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    .section-heading h2 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: #fff;
+    }
+
+    .section-heading p {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .conversation-log {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .message { display: flex; gap: 1rem; }
+
+    .message-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .msg-user .message-avatar { background: rgba(200, 169, 110, 0.2); }
+    .msg-claude .message-avatar { background: rgba(99, 179, 237, 0.15); }
+
+    .message-content { flex: 1; }
+
+    .message-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .message-bubble {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .msg-user .message-bubble { border-color: rgba(200, 169, 110, 0.25); }
+    .msg-claude .message-bubble { border-color: rgba(99, 179, 237, 0.15); }
+
+    .timestamp {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .stat-chips {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .stat-chip {
+      padding: 0.4rem 1rem;
+      background: rgba(200, 169, 110, 0.08);
+      border: 1px solid rgba(200, 169, 110, 0.2);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">World Travel Archive</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="how-i-built-this.html" class="active">How I Built This</a></li>
+  </ul>
+</nav>
+
+<section class="how-section">
+
+  <!-- INTRO -->
+  <div class="how-intro">
+    <p class="section-label" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Behind the Build</p>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(1.75rem,4vw,2.75rem); color:#fff;">How I Built This</h2>
+
+    <p>This website is my <strong style="color:#fff;">CSIT 212 Final Project</strong> — a personal World Travel Archive documenting every country I have visited since my first overseas trip to Thailand in 2012.</p>
+
+    <p>The entire site was built in a single session in collaboration with <strong style="color:var(--accent);">Claude (Anthropic AI)</strong>. The rule I set from the beginning: I would write zero lines of code. Every file, every function, every design decision would come from describing what I wanted in plain language and having the AI generate it.</p>
+
+    <p>This page is a complete record of that process — every prompt I sent, what the AI did with it, and what I learned about working with AI as a creative and technical partner.</p>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="process-card">
+    <p class="process-step">Technology Stack</p>
+    <h3>What This Site Is Built With</h3>
+    <div class="tech-stack">
+      <span class="tech-badge">HTML5</span>
+      <span class="tech-badge">CSS3 (Custom — no framework)</span>
+      <span class="tech-badge">Vanilla JavaScript (ES6+)</span>
+      <span class="tech-badge">Google Fonts</span>
+      <span class="tech-badge">GitHub Pages (Hosting)</span>
+      <span class="tech-badge">Claude AI — claude-sonnet-4-6</span>
+    </div>
+    <p>No React. No npm. No build pipeline. Just three plain files — HTML, CSS, JavaScript — that any browser can open without installation. This keeps the site fast, maintainable, and deployable anywhere for free. GitHub Pages serves it directly from the repository root.</p>
+    <p>All travel data lives in a single JavaScript array in <code style="color:var(--accent); font-size:0.85em;">main.js</code>. Adding a new trip means adding one object to that array — no database, no CMS, no backend.</p>
+
+    <div class="stat-chips">
+      <span class="stat-chip">17 trips documented</span>
+      <span class="stat-chip">26 countries & territories</span>
+      <span class="stat-chip">5 continents</span>
+      <span class="stat-chip">~280 days abroad</span>
+      <span class="stat-chip">0 lines of code written by hand</span>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- BUILD PROCESS -->
+  <div class="section-heading">
+    <h2>The Build Process</h2>
+    <p>From idea to deployed website — each step in order.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 01 · Session Start</p>
+    <h3>Defining the Project</h3>
+    <p>I opened Claude Code inside VS Code and described the project: a World Travel Archive website for CSIT 212, deployed on GitHub Pages, where I would write no code myself. I listed four rules: (1) Claude generates everything, (2) the theme is my real travel history, (3) deploy to GitHub Pages, (4) include a "How I Built This" page documenting the full conversation in English.</p>
+    <p>Claude checked my home directory, identified an existing <code style="color:var(--accent); font-size:0.85em;">~/Projects/</code> folder, and created the project structure there.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 02 · Design System</p>
+    <h3>Visual Identity</h3>
+    <p>Claude designed a dark, editorial aesthetic — inspired by travel magazines and exploration journals. The color palette centers on warm gold (<code style="color:var(--accent); font-size:0.85em;">#c8a96e</code>) against near-black backgrounds. Playfair Display was chosen for headings — classical, authoritative — and Inter for body text — clean and highly readable at small sizes.</p>
+    <p>All styling is in a single custom CSS file (~400 lines). No stylesheet framework was used; every component was written from scratch.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 03 · Initial Build (Placeholder Data)</p>
+    <h3>First Version</h3>
+    <p>Claude generated the initial site with six placeholder travel entries (Japan, France, Peru, Morocco, Iceland, Thailand) to establish the data structure and layout. This first version established: the hero section with animated stats counters, the featured cards grid, the country card grid, the timeline view, and the detail page template.</p>
+    <p>The focus at this stage was getting the architecture right — how data flows from one JavaScript array to every page on the site.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 04 · Data Update (Real Travel History)</p>
+    <h3>Replacing Placeholder Data with My Actual Trips</h3>
+    <p>I provided Claude with my complete travel history: 17 trips across 14 years, from Thailand in 2012 to Iceland & Boston in April 2026. For multi-country journeys (Europe 2015, Europe Grand Tour 2024–25, South America 2026), Claude grouped the countries into single trip entries with a combined title and full country list for accurate statistics.</p>
+    <p>Claude rewrote the entire <code style="color:var(--accent); font-size:0.85em;">main.js</code> data array, updated the statistics calculation logic to count unique countries across all trips, and added a single-template detail page system (<code style="color:var(--accent); font-size:0.85em;">countries/detail.html?id=...</code>) to avoid creating 17 separate HTML files.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 05 · UI Optimization (Filter + Sort)</p>
+    <h3>Year Sorting and Expanded Filters</h3>
+    <p>I asked Claude to optimize the UI so that the archive can be filtered by both region and travel style simultaneously, and sorted by year. Claude restructured the filter bar into two rows (Region / Style), added a sort bar with "Newest First" and "Oldest First" options, and updated the JavaScript filter logic to handle both filtering and DOM-reordering by year simultaneously. A live trip counter updates as filters change.</p>
+    <p>This required updating <code style="color:var(--accent); font-size:0.85em;">css/style.css</code> (new sort bar styles), <code style="color:var(--accent); font-size:0.85em;">js/main.js</code> (filter + sort logic), <code style="color:var(--accent); font-size:0.85em;">archive.html</code>, and <code style="color:var(--accent); font-size:0.85em;">index.html</code>.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 06 · This Page</p>
+    <h3>Documenting the Process</h3>
+    <p>I asked Claude to update <code style="color:var(--accent); font-size:0.85em;">how-i-built-this.html</code> in full English, with a complete summary of everything that had happened during our session. This page is the result of that prompt.</p>
+  </div>
+
+  <div class="process-card">
+    <p class="process-step">Step 07 · Coming Next</p>
+    <h3>GitHub Pages Deployment</h3>
+    <p>The final step is deploying the site to GitHub Pages. Claude will provide the exact terminal commands: initializing a git repository, creating a remote repository on GitHub, pushing all files, and enabling Pages in repository settings. The site will be publicly accessible at <code style="color:var(--accent); font-size:0.85em;">https://[username].github.io/world-travel-archive/</code>.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- CONVERSATION LOG -->
+  <div class="section-heading">
+    <h2>Full Conversation Log</h2>
+    <p>Every prompt sent during this session, in order, with Claude's response summary.</p>
+  </div>
+
+  <div class="conversation-log">
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #1</div>
+        <div class="message-bubble">
+          Hi! I'm a Mac user and I just subscribed to Claude Pro. I want to start my CSIT 212 final project with you.<br/><br/>
+          <strong>Project rules:</strong><br/>
+          1. I will not write a single line of code myself. You must create and modify all files, or give me terminal commands.<br/>
+          2. Theme: <em>My World Travel Archive</em> — a site to collect travel journals from every country I've visited.<br/>
+          3. The final goal is to deploy this site to GitHub Pages.<br/>
+          4. Record all our conversation prompts in English and create a separate page called "How I Built This" inside the site.
+        </div>
+        <div class="timestamp">Session Start · 2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #1</div>
+        <div class="message-bubble">
+          Checked the home directory, found an existing <code style="color:var(--accent); font-size:0.85em;">~/Projects/</code> folder. Created project at <code style="color:var(--accent); font-size:0.85em;">~/Projects/world-travel-archive/</code> with subdirectories <code style="color:var(--accent); font-size:0.85em;">css/</code>, <code style="color:var(--accent); font-size:0.85em;">js/</code>, <code style="color:var(--accent); font-size:0.85em;">countries/</code>, <code style="color:var(--accent); font-size:0.85em;">images/</code>.<br/><br/>
+          Generated 6 core files: <code style="color:var(--accent); font-size:0.85em;">css/style.css</code> (dark editorial design system, ~400 lines), <code style="color:var(--accent); font-size:0.85em;">js/main.js</code> (data + rendering logic), <code style="color:var(--accent); font-size:0.85em;">index.html</code>, <code style="color:var(--accent); font-size:0.85em;">archive.html</code>, <code style="color:var(--accent); font-size:0.85em;">timeline.html</code>, <code style="color:var(--accent); font-size:0.85em;">how-i-built-this.html</code>. Initial data used 6 placeholder destinations.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #2</div>
+        <div class="message-bubble">
+          Update all website data with my actual travel records. Make everything in English.<br/><br/>
+          <strong>My complete travel list:</strong><br/>
+          2012.08: Thailand (first overseas trip) · 2013.10: Shanghai, China · 2013.12–2014.02: San Diego, USA · 2015.08: Europe (UK, France, Switzerland, Italy, Vatican City) · 2018.08: Mongolia · 2022.08: Türkiye · 2024.02: Guam · 2024.08: Australia · 2024.12–2025.01: Europe Grand Tour (Qatar, Hungary, Austria, Czechia, Germany, Netherlands, Belgium, Luxembourg, France) · 2025.02: Qingdao, China · 2025.05: Bohol, Philippines · 2025.07: Almaty, Kazakhstan · 2025.08: Kitakyushu, Japan · 2025.12: Hawaii · 2026.01: USA (San Diego to New York) · 2026.03: South America & Miami (Santiago, Patagonia, Buenos Aires, Miami) · 2026.04: Iceland & Boston
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #2</div>
+        <div class="message-bubble">
+          Rewrote <code style="color:var(--accent); font-size:0.85em;">main.js</code> entirely with 17 real trip entries spanning 2012–2026. Each entry includes: unique ID, countries array (for accurate unique-country counting), flag emoji, continent, date, year, day count, gradient color, excerpt, tags, highlights, best season, currency, and a 4-paragraph narrative in first-person travel writing style.<br/><br/>
+          Added a JavaScript-rendered detail page template (<code style="color:var(--accent); font-size:0.85em;">countries/detail.html?id=...</code>) so all 17 trips share one HTML file rather than requiring 17 separate pages. Updated statistics logic to count unique countries across multi-country trips (26 total), continents (5), and total days (~280).
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-user">
+      <div class="message-avatar">👤</div>
+      <div class="message-content">
+        <div class="message-role">Geon Choi · Prompt #3</div>
+        <div class="message-bubble">
+          Optimize the UI in index.html and archive.html so I can filter or sort by year. Also update how-i-built-this.html fully in English with a summary of our entire conversation. Update all relevant files.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+    <div class="message msg-claude">
+      <div class="message-avatar">🤖</div>
+      <div class="message-content">
+        <div class="message-role">Claude (claude-sonnet-4-6) · Response #3</div>
+        <div class="message-bubble">
+          Updated 5 files:<br/><br/>
+          • <code style="color:var(--accent); font-size:0.85em;">css/style.css</code> — Added <code style="color:var(--accent); font-size:0.85em;">.controls-wrapper</code>, <code style="color:var(--accent); font-size:0.85em;">.sort-bar</code>, <code style="color:var(--accent); font-size:0.85em;">.sort-btn</code>, <code style="color:var(--accent); font-size:0.85em;">.trip-count</code>, and <code style="color:var(--accent); font-size:0.85em;">.filter-group-label</code> styles. Split filter bar into two rows (Region / Style).<br/>
+          • <code style="color:var(--accent); font-size:0.85em;">js/main.js</code> — Rewrote <code style="color:var(--accent); font-size:0.85em;">initFilter()</code> to handle simultaneous filtering + DOM-reordering sort. Added <code style="color:var(--accent); font-size:0.85em;">data-year</code> attribute to each card. Live trip counter updates on every filter/sort action.<br/>
+          • <code style="color:var(--accent); font-size:0.85em;">archive.html</code> — Two-row filter bar + sort controls + trip counter.<br/>
+          • <code style="color:var(--accent); font-size:0.85em;">index.html</code> — Same controls on the home page archive section.<br/>
+          • <code style="color:var(--accent); font-size:0.85em;">how-i-built-this.html</code> — Complete English rewrite with full conversation log, step-by-step build process, tech stack, and project statistics.
+        </div>
+        <div class="timestamp">2026-04-25</div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider" />
+
+  <!-- REFLECTION -->
+  <div class="process-card">
+    <p class="process-step">Reflection</p>
+    <h3>What I Learned</h3>
+    <p>The hardest part of building this site wasn't technical — it was knowing what to ask for. Every prompt required me to think clearly about what I actually wanted before I could describe it. The AI handled the syntax; the product thinking was still mine.</p>
+    <p>This project made a real argument for "plain HTML/CSS/JS" as a serious choice. No build step, no node_modules, no dependency vulnerabilities. Just files that work in any browser, on any machine, in ten years. For a content-focused personal archive, this is exactly the right stack.</p>
+    <p>Working with Claude Code also showed me how quickly iteration happens when the gap between idea and implementation is a single sentence. Design decisions that would normally take hours of googling and debugging happened in seconds. The bottleneck is always the human's clarity of thought — not the AI's ability to execute.</p>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-logo">WTA</div>
+  <p>World Travel Archive · CSIT 212 Final Project · Geon Choi</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--text-muted);">Built with Claude AI (claude-sonnet-4-6) · 2026</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

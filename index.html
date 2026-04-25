@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Travel Archive — Geon Choi</title>
+  <meta name="description" content="A personal archive of travels across the globe — stories, impressions, and memories from every corner of the world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <span class="nav-logo">World Travel Archive</span>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="how-i-built-this.html">How I Built This</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Geon Choi · Personal Archive</p>
+    <h1 class="hero-title">Every Journey<br/>Leaves a <span>Mark</span></h1>
+    <p class="hero-sub">A collection of stories from around the world — the places that changed how I see things, and the ones I keep returning to in memory.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="archive.html" class="btn btn-primary">Browse All Countries</a>
+      <a href="timeline.html" class="btn btn-outline">View Timeline</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-countries">0</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-continents">0</div>
+        <div class="stat-label">Continents</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-days">0</div>
+        <div class="stat-label">Days Abroad</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured">
+  <div class="section-header">
+    <p class="section-label">Featured Destinations</p>
+    <h2 class="section-title">Recent Adventures</h2>
+    <p class="section-desc">A few of the journeys that stood out — for the landscapes, the food, or the moments that surprised me most.</p>
+  </div>
+  <div class="featured-grid" id="featured-grid" style="max-width:1100px; margin:0 auto;"></div>
+</section>
+
+<!-- ALL COUNTRIES -->
+<section class="countries-section">
+  <div class="section-header">
+    <p class="section-label">The Full Archive</p>
+    <h2 class="section-title">All Destinations</h2>
+    <p class="section-desc">Every country visited, filed and ready to revisit.</p>
+  </div>
+
+  <div class="controls-wrapper">
+    <div class="filter-bar">
+      <span class="filter-group-label">Region:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Asia">Asia</button>
+      <button class="filter-btn" data-filter="Europe">Europe</button>
+      <button class="filter-btn" data-filter="North America">Americas</button>
+      <button class="filter-btn" data-filter="South America">S. America</button>
+      <button class="filter-btn" data-filter="Oceania">Oceania</button>
+    </div>
+    <div class="filter-bar">
+      <span class="filter-group-label">Style:</span>
+      <button class="filter-btn" data-filter="Nature">Nature</button>
+      <button class="filter-btn" data-filter="Food">Food</button>
+      <button class="filter-btn" data-filter="Culture">Culture</button>
+      <button class="filter-btn" data-filter="Multi-Country">Multi-Country</button>
+      <button class="filter-btn" data-filter="Beaches">Beaches</button>
+    </div>
+    <div class="sort-bar">
+      <span class="sort-label">Sort by year:</span>
+      <button class="sort-btn active" data-sort="newest">Newest First</button>
+      <button class="sort-btn" data-sort="oldest">Oldest First</button>
+      <span id="trip-count" class="trip-count">17 trips</span>
+    </div>
+  </div>
+
+  <div class="countries-grid" id="countries-grid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">WTA</div>
+  <p>World Travel Archive · Built with Claude AI for CSIT 212</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">
+    <a href="how-i-built-this.html" style="color: var(--accent);">How I Built This →</a>
+  </p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Override stat elements to use correct IDs
+  document.addEventListener('DOMContentLoaded', () => {
+    const travels = window._travels || [];
+  });
+
+  // Patch stat counters after main.js runs
+  document.addEventListener('DOMContentLoaded', () => {
+    // stats are handled in main.js initHomepage()
+  });
+</script>
+</body>
+</html>
