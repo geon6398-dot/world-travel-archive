@@ -347,6 +347,8 @@ const travelPhotos = {
   'south-america-2026': ['IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
   'turkey-2022': ['IMG_0104.jpeg','IMG_0174.jpeg','IMG_0472.jpeg','IMG_0598.jpeg','IMG_0748.jpeg','IMG_0914.jpeg','IMG_0950.jpeg','IMG_1155.jpeg','IMG_1334.jpeg','IMG_1460.jpeg','IMG_1504.jpeg','IMG_1569.jpeg','IMG_1579.jpeg','IMG_1592.jpeg','IMG_1605.jpeg','IMG_1612.jpeg','IMG_1613.jpeg','IMG_1620.jpeg','IMG_1957.jpeg','IMG_1962.jpeg','IMG_1975.jpeg','IMG_2029.jpeg','IMG_2149.jpeg','IMG_2300.jpeg','IMG_2629.jpeg','IMG_2671.jpeg','IMG_2707.jpeg','IMG_2796.jpeg','IMG_2835.jpeg','IMG_2838.jpeg','IMG_6594.JPG','IMG_6621.jpeg','IMG_7306.jpeg','IMG_7358.jpeg','IMG_7509.jpeg','IMG_7767.JPG','IMG_7769.JPG','IMG_8594.jpeg','IMG_8703.jpeg','IMG_9186.jpeg','IMG_9421.jpeg','IMG_9476.jpeg','IMG_9503.jpeg','IMG_9660.jpeg'],
   'usa-2026': ['IMG_0113.jpeg','IMG_4508.jpeg','IMG_4735.jpeg','IMG_4820.jpeg','IMG_5111.jpeg','IMG_5112.jpeg','IMG_5139.jpeg','IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
+  'qatar-2024': ['IMG_7259.jpeg','IMG_7282.jpeg','IMG_7290.jpeg','IMG_7306.jpeg','IMG_7317.jpeg','IMG_7361.jpeg','IMG_7362.jpeg','IMG_7404.jpeg','IMG_7418.jpeg'],
+  'boston-2026': ['IMG_2285.jpeg','IMG_2289.jpeg','IMG_2290.jpeg','IMG_2295.jpeg','IMG_2305.jpeg','IMG_2306.jpeg','IMG_2320.jpeg','IMG_2350.jpeg','IMG_2380.jpeg','IMG_2395.jpeg','IMG_2417.jpeg','IMG_2472.jpeg','IMG_2507.jpeg','IMG_2510.jpeg','IMG_2516.jpeg','IMG_2536.jpeg','IMG_2585.jpeg','IMG_2621.jpeg','IMG_2666.jpeg','IMG_2685.jpeg','IMG_2752.jpeg','IMG_2753.jpeg'],
 };
 
 function imgBase() {
