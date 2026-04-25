@@ -299,15 +299,52 @@ function getStats() {
   return { countries: allCountries.size, continents: allContinents.size, days: totalDays };
 }
 
+// ===== PHOTO DATA =====
+const travelPhotos = {
+  'australia-2024': ['IMG_0420.JPG','IMG_0523.jpeg','IMG_0875.JPG','IMG_1003.jpeg','IMG_1184.jpeg','IMG_1241.jpeg','IMG_1416.jpeg','IMG_1642.JPG','IMG_1893.jpeg','IMG_2224.JPG','IMG_6060.JPG','IMG_8966.jpeg','IMG_9807.jpeg'],
+  'china-qingdao-2025': ['IMG_3051.jpeg','IMG_3505.jpeg','IMG_3547.jpeg','IMG_5697.jpeg'],
+  'europe-grand-tour-2025': ['IMG_0104.jpeg','IMG_0174.jpeg','IMG_0472.jpeg','IMG_0598.jpeg','IMG_0748.jpeg','IMG_0914.jpeg','IMG_0950.jpeg','IMG_1155.jpeg','IMG_1334.jpeg','IMG_1460.jpeg','IMG_1504.jpeg','IMG_1569.jpeg','IMG_1613.jpeg','IMG_7306.jpeg','IMG_7358.jpeg','IMG_7509.jpeg','IMG_8594.jpeg','IMG_8703.jpeg','IMG_9186.jpeg','IMG_9476.jpeg','IMG_9660.jpeg'],
+  'guam-2024': ['IMG_0104.jpeg','IMG_0174.jpeg','IMG_0472.jpeg','IMG_0598.jpeg','IMG_0748.jpeg','IMG_0914.jpeg','IMG_0950.jpeg','IMG_1155.jpeg','IMG_1334.jpeg','IMG_1460.jpeg','IMG_1504.jpeg','IMG_1569.jpeg','IMG_1592.jpeg','IMG_1613.jpeg','IMG_2629.jpeg','IMG_2671.jpeg','IMG_2707.jpeg','IMG_2796.jpeg','IMG_2835.jpeg','IMG_2838.jpeg','IMG_6594.JPG','IMG_6621.jpeg','IMG_7306.jpeg','IMG_7358.jpeg','IMG_7509.jpeg','IMG_7767.JPG','IMG_7769.JPG','IMG_8594.jpeg','IMG_8703.jpeg','IMG_9186.jpeg','IMG_9476.jpeg','IMG_9660.jpeg'],
+  'hawaii-2025': ['IMG_2814.jpeg','IMG_2909.jpeg','IMG_3001.jpeg','IMG_3293.jpeg','IMG_3309.jpeg','IMG_3439.jpeg','IMG_3450.jpeg','IMG_5601.jpeg'],
+  'iceland-boston-2026': ['IMG_0403.jpeg','IMG_0404.jpeg','IMG_0430.jpeg','IMG_0650.jpeg','IMG_0885.jpeg','IMG_0893.jpeg','IMG_0939.jpeg','IMG_1205.jpeg','IMG_1320.jpeg','IMG_1324.jpeg','IMG_9724.jpeg','IMG_9807.jpeg'],
+  'japan-kitakyushu-2025': ['IMG_0267.jpeg','IMG_0368.jpeg','IMG_1988.jpeg','IMG_5601.jpeg'],
+  'kazakhstan-almaty-2025': ['IMG_0267.jpeg','IMG_0368.jpeg','IMG_1988.jpeg','IMG_5601.jpeg','IMG_8439.jpeg','IMG_8829.jpeg','IMG_8995.jpeg','IMG_9189.jpeg','IMG_9394.jpeg','IMG_9397.jpeg','IMG_9542.JPG'],
+  'philippines-bohol-2025': ['IMG_6009.jpeg','IMG_6010.jpeg','IMG_6523.jpeg','IMG_6603.jpeg','IMG_6698.jpeg','IMG_6933.jpeg'],
+  'south-america-2026': ['IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
+  'turkey-2022': ['IMG_0104.jpeg','IMG_0174.jpeg','IMG_0472.jpeg','IMG_0598.jpeg','IMG_0748.jpeg','IMG_0914.jpeg','IMG_0950.jpeg','IMG_1155.jpeg','IMG_1334.jpeg','IMG_1460.jpeg','IMG_1504.jpeg','IMG_1569.jpeg','IMG_1579.jpeg','IMG_1592.jpeg','IMG_1605.jpeg','IMG_1612.jpeg','IMG_1613.jpeg','IMG_1620.jpeg','IMG_1957.jpeg','IMG_1962.jpeg','IMG_1975.jpeg','IMG_2029.jpeg','IMG_2149.jpeg','IMG_2300.jpeg','IMG_2629.jpeg','IMG_2671.jpeg','IMG_2707.jpeg','IMG_2796.jpeg','IMG_2835.jpeg','IMG_2838.jpeg','IMG_6594.JPG','IMG_6621.jpeg','IMG_7306.jpeg','IMG_7358.jpeg','IMG_7509.jpeg','IMG_7767.JPG','IMG_7769.JPG','IMG_8594.jpeg','IMG_8703.jpeg','IMG_9186.jpeg','IMG_9421.jpeg','IMG_9476.jpeg','IMG_9503.jpeg','IMG_9660.jpeg'],
+  'usa-2026': ['IMG_0113.jpeg','IMG_4508.jpeg','IMG_4735.jpeg','IMG_4820.jpeg','IMG_5111.jpeg','IMG_5112.jpeg','IMG_5139.jpeg','IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
+};
+
+function imgBase() {
+  return location.pathname.includes('/countries/') ? '../' : '';
+}
+
+function getPhotos(id) {
+  return (travelPhotos[id] || []).map(f => `${imgBase()}images/${id}/${f}`);
+}
+
+function getCoverPhoto(id) {
+  const files = travelPhotos[id];
+  return files && files.length ? `${imgBase()}images/${id}/${files[0]}` : null;
+}
+
 // ===== RENDER HELPERS =====
 function createCard(travel) {
+  const cover = getCoverPhoto(travel.id);
+  const thumb = cover
+    ? `<div style="height:180px;overflow:hidden;position:relative;">
+         <img src="${cover}" alt="${travel.title}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;">
+         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);pointer-events:none;"></div>
+         <span style="position:absolute;bottom:0.5rem;right:0.75rem;font-size:1.5rem;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.7));">${travel.flag}</span>
+       </div>`
+    : `<div style="background:${travel.coverGradient};height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;flex-direction:column;gap:0.25rem;">
+         <span>${travel.flag}</span>
+         <span style="font-size:0.7rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;">${travel.year}</span>
+       </div>`;
   return `
-    <div class="country-card" data-id="${travel.id}" data-continent="${travel.continent}" data-tags="${travel.tags.join(',')}"
+    <div class="country-card" data-id="${travel.id}" data-continent="${travel.continent}" data-tags="${travel.tags.join(',')}" data-year="${travel.year}"
          onclick="window.location.href='countries/detail.html?id=${travel.id}'">
-      <div style="background:${travel.coverGradient}; height:180px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; flex-direction:column; gap:0.25rem;">
-        <span>${travel.flag}</span>
-        <span style="font-size:0.7rem; color:rgba(255,255,255,0.5); letter-spacing:0.1em;">${travel.year}</span>
-      </div>
+      ${thumb}
       <div class="country-card-body">
         <div class="country-card-header">
           <span class="country-flag">${travel.flag}</span>
@@ -333,17 +370,26 @@ function initHomepage() {
 
   if (featuredGrid) {
     const featured = travels.slice(-3).reverse();
-    featuredGrid.innerHTML = featured.map((t, i) => `
-      <div class="featured-card" onclick="window.location.href='countries/detail.html?id=${t.id}'" ${i === 0 ? 'style="grid-row:1/3;"' : ''}>
-        <div class="card-image" style="background:${t.coverGradient}; ${i === 0 ? 'aspect-ratio:unset; height:100%;' : ''} display:flex; align-items:center; justify-content:center; font-size:${i === 0 ? '6rem' : '4rem'};">${t.flag}</div>
-        <div class="card-overlay">
-          <div class="card-flag">${t.flag}</div>
-          <div class="card-country">${t.title}</div>
-          <div class="card-date">${t.date} · ${t.continent}</div>
-          <div class="card-excerpt">${t.excerpt}</div>
+    featuredGrid.innerHTML = featured.map((t, i) => {
+      const cover = getCoverPhoto(t.id);
+      const bgStyle = cover
+        ? `background-image:url('${cover}');background-size:cover;background-position:center;`
+        : `background:${t.coverGradient};`;
+      const isFirst = i === 0;
+      return `
+        <div class="featured-card" onclick="window.location.href='countries/detail.html?id=${t.id}'" ${isFirst ? 'style="grid-row:1/3;"' : ''}>
+          <div class="card-image" style="${bgStyle}${isFirst ? 'aspect-ratio:unset;height:100%;' : ''}${!cover ? 'display:flex;align-items:center;justify-content:center;font-size:' + (isFirst ? '6rem' : '4rem') + ';' : ''}">
+            ${!cover ? t.flag : ''}
+          </div>
+          <div class="card-overlay">
+            <div class="card-flag">${t.flag}</div>
+            <div class="card-country">${t.title}</div>
+            <div class="card-date">${t.date} · ${t.continent}</div>
+            <div class="card-excerpt">${t.excerpt}</div>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   if (grid) {
@@ -435,6 +481,52 @@ function initFilter() {
   applyFilterSort();
 }
 
+// ===== LIGHTBOX =====
+function openLightbox(photos, startIndex) {
+  let current = startIndex;
+
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = `
+    <button class="lb-close" aria-label="Close">✕</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <div class="lb-img-wrap">
+      <img class="lb-img" src="${photos[current]}" alt="">
+      <div class="lb-counter">${current + 1} / ${photos.length}</div>
+    </div>
+    <button class="lb-next" aria-label="Next">›</button>
+  `;
+  document.body.appendChild(lb);
+  document.body.style.overflow = 'hidden';
+
+  const img = lb.querySelector('.lb-img');
+  const counter = lb.querySelector('.lb-counter');
+
+  function show(i) {
+    current = (i + photos.length) % photos.length;
+    img.style.opacity = '0';
+    setTimeout(() => {
+      img.src = photos[current];
+      img.onload = () => { img.style.opacity = '1'; };
+      counter.textContent = `${current + 1} / ${photos.length}`;
+    }, 150);
+  }
+
+  lb.querySelector('.lb-close').onclick = () => {
+    document.body.removeChild(lb);
+    document.body.style.overflow = '';
+  };
+  lb.querySelector('.lb-prev').onclick = () => show(current - 1);
+  lb.querySelector('.lb-next').onclick = () => show(current + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) lb.querySelector('.lb-close').click(); });
+
+  document.addEventListener('keydown', function handler(e) {
+    if (e.key === 'Escape') { lb.querySelector('.lb-close').click(); document.removeEventListener('keydown', handler); }
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+}
+
 // ===== DETAIL PAGE =====
 function initDetailPage() {
   const params = new URLSearchParams(location.search);
@@ -443,15 +535,20 @@ function initDetailPage() {
 
   const trip = travels.find(t => t.id === id);
   if (!trip) {
-    document.getElementById('detail-content').innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:4rem;">Trip not found.</p>';
+    document.getElementById('detail-content').innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:4rem;">Trip not found.</p>';
     return;
   }
 
   document.title = `${trip.title} — World Travel Archive`;
+  const photos = getPhotos(trip.id);
 
   const hero = document.getElementById('detail-hero');
   if (hero) {
-    hero.style.background = trip.coverGradient;
+    if (photos.length > 0) {
+      hero.style.cssText = `background-image:url('${photos[0]}');background-size:cover;background-position:center;`;
+    } else {
+      hero.style.background = trip.coverGradient;
+    }
     hero.innerHTML = `
       <div class="country-hero-overlay"></div>
       <div class="country-hero-content">
@@ -462,26 +559,24 @@ function initDetailPage() {
     `;
   }
 
+  const galleryHtml = photos.length > 0 ? `
+    <h2 style="margin-top:2.5rem;">Photos <span style="font-size:0.85rem;color:var(--text-muted);font-family:var(--font);font-weight:400;">${photos.length} shots</span></h2>
+    <div class="photo-gallery" id="photo-gallery">
+      ${photos.map((src, i) => `
+        <div class="gallery-item" data-index="${i}">
+          <img src="${src}" alt="Photo ${i+1}" loading="lazy">
+        </div>`).join('')}
+    </div>
+  ` : '';
+
   const content = document.getElementById('detail-content');
   if (content) {
     content.innerHTML = `
       <div class="info-grid">
-        <div class="info-card">
-          <div class="info-card-label">Duration</div>
-          <div class="info-card-value">${trip.days} days</div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-label">Best Time to Visit</div>
-          <div class="info-card-value">${trip.bestTime}</div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-label">Currency</div>
-          <div class="info-card-value">${trip.currency}</div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-label">Continent</div>
-          <div class="info-card-value">${trip.continent}</div>
-        </div>
+        <div class="info-card"><div class="info-card-label">Duration</div><div class="info-card-value">${trip.days} days</div></div>
+        <div class="info-card"><div class="info-card-label">Best Time</div><div class="info-card-value">${trip.bestTime}</div></div>
+        <div class="info-card"><div class="info-card-label">Currency</div><div class="info-card-value">${trip.currency}</div></div>
+        <div class="info-card"><div class="info-card-label">Continent</div><div class="info-card-value">${trip.continent}</div></div>
       </div>
 
       <div class="country-tags" style="margin-bottom:2rem;">
@@ -492,18 +587,27 @@ function initDetailPage() {
       ${trip.story.split('\n\n').map(p => `<p>${p}</p>`).join('')}
 
       <h2 style="margin-top:2.5rem;">Highlights</h2>
-      <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem;">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
         ${trip.highlights.map(h => `
-          <li style="display:flex; align-items:center; gap:0.75rem; color:var(--text-muted);">
+          <li style="display:flex;align-items:center;gap:0.75rem;color:var(--text-muted);">
             <span style="color:var(--accent);">→</span> ${h}
           </li>`).join('')}
       </ul>
 
-      <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      ${galleryHtml}
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
         <a href="../archive.html" class="btn btn-outline">← Back to Archive</a>
         <a href="../archive.html" class="btn btn-outline">All Destinations</a>
       </div>
     `;
+
+    if (photos.length > 0) {
+      document.getElementById('photo-gallery').addEventListener('click', e => {
+        const item = e.target.closest('.gallery-item');
+        if (item) openLightbox(photos, parseInt(item.dataset.index));
+      });
+    }
   }
 }
 
