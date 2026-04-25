@@ -257,7 +257,7 @@ const travels = [
   },
   {
     id: "usa-2026",
-    title: "San Diego & Southwest, USA",
+    title: "San Diego, USA",
     countries: ["USA"],
     flag: "🇺🇸",
     continent: "North America",
@@ -380,7 +380,7 @@ const travelPhotos = {
   'kazakhstan-almaty-2025': ['IMG_0267.jpeg','IMG_0368.jpeg','IMG_1988.jpeg','IMG_5601.jpeg','IMG_8439.jpeg','IMG_8829.jpeg','IMG_8995.jpeg','IMG_9189.jpeg','IMG_9394.jpeg','IMG_9397.jpeg','IMG_9542.JPG'],
   'philippines-bohol-2025': ['IMG_6009.jpeg','IMG_6010.jpeg','IMG_6523.jpeg','IMG_6603.jpeg','IMG_6698.jpeg','IMG_6933.jpeg'],
   'south-america-2026': ['IMG_6496.jpeg','IMG_6621.jpeg','IMG_6872.jpeg','IMG_6897.jpeg','IMG_7374.jpeg','IMG_7377.jpeg','IMG_7901.jpeg'],
-  'turkey-2022': ['IMG_0104.jpeg','IMG_0174.jpeg','IMG_0472.jpeg','IMG_0598.jpeg','IMG_0748.jpeg','IMG_0914.jpeg','IMG_0950.jpeg','IMG_1155.jpeg','IMG_1334.jpeg','IMG_1460.jpeg','IMG_1504.jpeg','IMG_1569.jpeg','IMG_1579.jpeg','IMG_1592.jpeg','IMG_1605.jpeg','IMG_1612.jpeg','IMG_1613.jpeg','IMG_1620.jpeg','IMG_1957.jpeg','IMG_1962.jpeg','IMG_1975.jpeg','IMG_2029.jpeg','IMG_2149.jpeg','IMG_2300.jpeg','IMG_2629.jpeg','IMG_2671.jpeg','IMG_2707.jpeg','IMG_2796.jpeg','IMG_2835.jpeg','IMG_2838.jpeg','IMG_6594.JPG','IMG_6621.jpeg','IMG_7306.jpeg','IMG_7358.jpeg','IMG_7509.jpeg','IMG_7767.JPG','IMG_7769.JPG','IMG_8594.jpeg','IMG_8703.jpeg','IMG_9186.jpeg','IMG_9421.jpeg','IMG_9476.jpeg','IMG_9503.jpeg','IMG_9660.jpeg'],
+  'turkey-2022': ['IMG_1579.jpeg','IMG_1605.jpeg','IMG_1612.jpeg','IMG_1620.jpeg','IMG_1957.jpeg','IMG_1962.jpeg','IMG_1975.jpeg','IMG_2149.jpeg','IMG_2300.jpeg','IMG_2629.jpeg','IMG_6594.JPG','IMG_9421.jpeg','IMG_9503.jpeg'],
   'usa-2026': ['IMG_3565.jpeg','IMG_3576.jpeg','IMG_3580.jpeg','IMG_3588.jpeg','IMG_3601.jpeg','IMG_3609.jpeg','IMG_3616.jpeg','IMG_3671.jpeg','IMG_3686.jpeg','IMG_3701.jpeg','IMG_3713.jpeg','IMG_3716.jpeg','IMG_3733.jpeg','IMG_3739.jpeg','IMG_3763.jpeg','IMG_3783.jpeg','IMG_3805.jpeg','IMG_3816.jpeg','IMG_3822.jpeg','IMG_3836.jpeg','IMG_3855.jpeg','IMG_3864.jpeg','IMG_3880.jpeg','IMG_3896.jpeg'],
   'new-york-2026': ['IMG_1510.jpeg','IMG_1695.jpeg','IMG_1708.jpeg','IMG_2918.jpeg','IMG_2970.jpeg','IMG_2972.jpeg','IMG_3068.jpeg','IMG_3103.jpeg','IMG_3121.jpeg','IMG_3128.jpeg','IMG_3147.jpeg','IMG_3167.jpeg','IMG_3217.jpeg','IMG_3609.jpeg','IMG_3619.jpeg','IMG_3621.jpeg','IMG_3638.jpeg','IMG_3655.jpeg','IMG_4460.jpeg','IMG_4506.jpeg','IMG_4823.jpeg','IMG_5135.jpeg'],
   'qatar-2024': ['IMG_7259.jpeg','IMG_7282.jpeg','IMG_7290.jpeg','IMG_7306.jpeg','IMG_7317.jpeg','IMG_7361.jpeg','IMG_7362.jpeg','IMG_7404.jpeg','IMG_7418.jpeg'],
